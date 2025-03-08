@@ -1357,7 +1357,7 @@
                                                       class="md-nav__link"
                                                     >
                                                       <span class="md-ellipsis">
-                                                        __init__()
+                                                        __init__
                                                       </span>
                                                     </a>
                                                   </li>
@@ -1368,7 +1368,7 @@
                                                       class="md-nav__link"
                                                     >
                                                       <span class="md-ellipsis">
-                                                        run()
+                                                        run
                                                       </span>
                                                     </a>
                                                   </li>
@@ -1379,7 +1379,7 @@
                                                       class="md-nav__link"
                                                     >
                                                       <span class="md-ellipsis">
-                                                        handle()
+                                                        handle
                                                       </span>
                                                     </a>
                                                   </li>
@@ -1390,7 +1390,7 @@
                                                       class="md-nav__link"
                                                     >
                                                       <span class="md-ellipsis">
-                                                        get_jobs()
+                                                        get_jobs
                                                       </span>
                                                     </a>
                                                   </li>
@@ -1401,7 +1401,7 @@
                                                       class="md-nav__link"
                                                     >
                                                       <span class="md-ellipsis">
-                                                        enqueue()
+                                                        enqueue
                                                       </span>
                                                     </a>
                                                   </li>
@@ -1412,7 +1412,7 @@
                                                       class="md-nav__link"
                                                     >
                                                       <span class="md-ellipsis">
-                                                        enqueue_once()
+                                                        enqueue_once
                                                       </span>
                                                     </a>
                                                   </li>
@@ -3766,9 +3766,7 @@
                                     href="#netbox.jobs.JobRunner.__init__"
                                     class="md-nav__link"
                                   >
-                                    <span class="md-ellipsis">
-                                      __init__()
-                                    </span>
+                                    <span class="md-ellipsis"> __init__ </span>
                                   </a>
                                 </li>
 
@@ -3777,7 +3775,7 @@
                                     href="#netbox.jobs.JobRunner.run"
                                     class="md-nav__link"
                                   >
-                                    <span class="md-ellipsis"> run() </span>
+                                    <span class="md-ellipsis"> run </span>
                                   </a>
                                 </li>
 
@@ -3786,7 +3784,7 @@
                                     href="#netbox.jobs.JobRunner.handle"
                                     class="md-nav__link"
                                   >
-                                    <span class="md-ellipsis"> handle() </span>
+                                    <span class="md-ellipsis"> handle </span>
                                   </a>
                                 </li>
 
@@ -3795,9 +3793,7 @@
                                     href="#netbox.jobs.JobRunner.get_jobs"
                                     class="md-nav__link"
                                   >
-                                    <span class="md-ellipsis">
-                                      get_jobs()
-                                    </span>
+                                    <span class="md-ellipsis"> get_jobs </span>
                                   </a>
                                 </li>
 
@@ -3806,7 +3802,7 @@
                                     href="#netbox.jobs.JobRunner.enqueue"
                                     class="md-nav__link"
                                   >
-                                    <span class="md-ellipsis"> enqueue() </span>
+                                    <span class="md-ellipsis"> enqueue </span>
                                   </a>
                                 </li>
 
@@ -3816,7 +3812,7 @@
                                     class="md-nav__link"
                                   >
                                     <span class="md-ellipsis">
-                                      enqueue_once()
+                                      enqueue_once
                                     </span>
                                   </a>
                                 </li>
@@ -3923,10 +3919,14 @@
 
               <div class="doc doc-object doc-class">
                 <h3 id="netbox.jobs.JobRunner" class="doc doc-heading">
-                  <code> JobRunner (<span title="abc.ABC">ABC</span>) </code>
+                  <code>JobRunner</code>
                 </h3>
 
                 <div class="doc doc-contents first">
+                  <p class="doc doc-class-bases">
+                    Bases: <code><span title="abc.ABC">ABC</span></code>
+                  </p>
+
                   <p>Background Job helper class.</p>
                   <p>
                     This class handles the execution of a background job. It is
@@ -3935,27 +3935,22 @@
                   </p>
 
                   <div class="doc doc-children">
-                    <div class="doc doc-object doc-method">
+                    <div class="doc doc-object doc-function">
                       <h4
                         id="netbox.jobs.JobRunner.__init__"
                         class="doc doc-heading"
                       >
                         <code class="highlight language-python"
                           ><span class="fm">__init__</span
-                          ><span class="p">(</span><span class="bp">self</span
-                          ><span class="p">,</span> <span class="n">job</span
+                          ><span class="p">(</span><span class="n">job</span
                           ><span class="p">)</span></code
                         >
-
-                        <span class="doc doc-properties">
-                          <small class="doc doc-property doc-property-special"
-                            ><code>special</code></small
-                          >
-                        </span>
                       </h4>
 
                       <div class="doc doc-contents">
-                        <p><strong>Parameters:</strong></p>
+                        <p>
+                          <span class="doc-section-title">Parameters:</span>
+                        </p>
                         <table>
                           <thead>
                             <tr>
@@ -3966,35 +3961,46 @@
                             </tr>
                           </thead>
                           <tbody>
-                            <tr>
-                              <td><code>job</code></td>
+                            <tr class="doc-section-item">
+                              <td>
+                                <code>job</code>
+                              </td>
                               <td></td>
                               <td>
-                                <p>
-                                  The specific <code>Job</code> this
-                                  <code>JobRunner</code> is executing.
-                                </p>
+                                <div class="doc-md-description">
+                                  <p>
+                                    The specific <code>Job</code> this
+                                    <code>JobRunner</code> is executing.
+                                  </p>
+                                </div>
                               </td>
-                              <td><em>required</em></td>
+                              <td>
+                                <em>required</em>
+                              </td>
                             </tr>
                           </tbody>
                         </table>
                       </div>
                     </div>
 
-                    <div class="doc doc-object doc-method">
+                    <div class="doc doc-object doc-function">
                       <h4
                         id="netbox.jobs.JobRunner.run"
                         class="doc doc-heading"
                       >
                         <code class="highlight language-python"
                           ><span class="n">run</span><span class="p">(</span
-                          ><span class="bp">self</span><span class="p">,</span>
-                          <span class="o">*</span><span class="n">args</span
+                          ><span class="o">*</span><span class="n">args</span
                           ><span class="p">,</span> <span class="o">**</span
                           ><span class="n">kwargs</span
                           ><span class="p">)</span></code
                         >
+
+                        <span class="doc doc-labels">
+                          <small class="doc doc-label doc-label-abstractmethod"
+                            ><code>abstractmethod</code></small
+                          >
+                        </span>
                       </h4>
 
                       <div class="doc doc-contents">
@@ -4006,7 +4012,7 @@
                       </div>
                     </div>
 
-                    <div class="doc doc-object doc-method">
+                    <div class="doc doc-object doc-function">
                       <h4
                         id="netbox.jobs.JobRunner.handle"
                         class="doc doc-heading"
@@ -4020,9 +4026,8 @@
                           ><span class="p">)</span></code
                         >
 
-                        <span class="doc doc-properties">
-                          <small
-                            class="doc doc-property doc-property-classmethod"
+                        <span class="doc doc-labels">
+                          <small class="doc doc-label doc-label-classmethod"
                             ><code>classmethod</code></small
                           >
                         </span>
@@ -4040,7 +4045,7 @@
                       </div>
                     </div>
 
-                    <div class="doc doc-object doc-method">
+                    <div class="doc doc-object doc-function">
                       <h4
                         id="netbox.jobs.JobRunner.get_jobs"
                         class="doc doc-heading"
@@ -4053,9 +4058,8 @@
                           ><span class="p">)</span></code
                         >
 
-                        <span class="doc doc-properties">
-                          <small
-                            class="doc doc-property doc-property-classmethod"
+                        <span class="doc doc-labels">
+                          <small class="doc doc-label doc-label-classmethod"
                             ><code>classmethod</code></small
                           >
                         </span>
@@ -4069,7 +4073,7 @@
                       </div>
                     </div>
 
-                    <div class="doc doc-object doc-method">
+                    <div class="doc doc-object doc-function">
                       <h4
                         id="netbox.jobs.JobRunner.enqueue"
                         class="doc doc-heading"
@@ -4082,9 +4086,8 @@
                           ><span class="p">)</span></code
                         >
 
-                        <span class="doc doc-properties">
-                          <small
-                            class="doc doc-property doc-property-classmethod"
+                        <span class="doc doc-labels">
+                          <small class="doc doc-label doc-label-classmethod"
                             ><code>classmethod</code></small
                           >
                         </span>
@@ -4101,17 +4104,17 @@
                       </div>
                     </div>
 
-                    <div class="doc doc-object doc-method">
+                    <div class="doc doc-object doc-function">
                       <h4
                         id="netbox.jobs.JobRunner.enqueue_once"
                         class="doc doc-heading"
                       >
                         <code class="highlight language-python"
                           ><span class="n">enqueue_once</span
-                          ><span class="p">(</span><span class="bp">cls</span
+                          ><span class="p">(</span
+                          ><span class="n">instance</span
+                          ><span class="o">=</span><span class="kc">None</span
                           ><span class="p">,</span>
-                          <span class="n">instance</span><span class="o">=</span
-                          ><span class="kc">None</span><span class="p">,</span>
                           <span class="n">schedule_at</span
                           ><span class="o">=</span><span class="kc">None</span
                           ><span class="p">,</span>
@@ -4123,9 +4126,8 @@
                           ><span class="p">)</span></code
                         >
 
-                        <span class="doc doc-properties">
-                          <small
-                            class="doc doc-property doc-property-classmethod"
+                        <span class="doc doc-labels">
+                          <small class="doc doc-label doc-label-classmethod"
                             ><code>classmethod</code></small
                           >
                         </span>
@@ -4155,7 +4157,9 @@
                           For additional parameters see <code>enqueue()</code>.
                         </p>
 
-                        <p><strong>Parameters:</strong></p>
+                        <p>
+                          <span class="doc-section-title">Parameters:</span>
+                        </p>
                         <table>
                           <thead>
                             <tr>
@@ -4166,33 +4170,53 @@
                             </tr>
                           </thead>
                           <tbody>
-                            <tr>
-                              <td><code>instance</code></td>
+                            <tr class="doc-section-item">
+                              <td>
+                                <code>instance</code>
+                              </td>
                               <td></td>
                               <td>
-                                <p>
-                                  The NetBox object to which this job pertains
-                                  (optional)
-                                </p>
+                                <div class="doc-md-description">
+                                  <p>
+                                    The NetBox object to which this job pertains
+                                    (optional)
+                                  </p>
+                                </div>
                               </td>
-                              <td><code>None</code></td>
+                              <td>
+                                <code>None</code>
+                              </td>
                             </tr>
-                            <tr>
-                              <td><code>schedule_at</code></td>
+                            <tr class="doc-section-item">
+                              <td>
+                                <code>schedule_at</code>
+                              </td>
                               <td></td>
                               <td>
-                                <p>
-                                  Schedule the job to be executed at the passed
-                                  date and time
-                                </p>
+                                <div class="doc-md-description">
+                                  <p>
+                                    Schedule the job to be executed at the
+                                    passed date and time
+                                  </p>
+                                </div>
                               </td>
-                              <td><code>None</code></td>
+                              <td>
+                                <code>None</code>
+                              </td>
                             </tr>
-                            <tr>
-                              <td><code>interval</code></td>
+                            <tr class="doc-section-item">
+                              <td>
+                                <code>interval</code>
+                              </td>
                               <td></td>
-                              <td><p>Recurrence interval (in minutes)</p></td>
-                              <td><code>None</code></td>
+                              <td>
+                                <div class="doc-md-description">
+                                  <p>Recurrence interval (in minutes)</p>
+                                </div>
+                              </td>
+                              <td>
+                                <code>None</code>
+                              </td>
                             </tr>
                           </tbody>
                         </table>
@@ -4201,7 +4225,6 @@
                   </div>
                 </div>
               </div>
-
               <h4 id="example">Example</h4>
               <div class="highlight">
                 <span class="filename">jobs.py</span>

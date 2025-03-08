@@ -7371,17 +7371,17 @@
     },
     {
       "location": "plugins/development/background-jobs/#netbox.jobs.JobRunner",
-      "title": "<code> JobRunner            (ABC)         </code>",
-      "text": "<p>Background Job helper class.</p> <p>This class handles the execution of a background job. It is responsible for maintaining its state, reporting errors, and scheduling recurring jobs.</p>"
+      "title": "<code>JobRunner</code>",
+      "text": "<p>               Bases: <code>ABC</code></p> <p>Background Job helper class.</p> <p>This class handles the execution of a background job. It is responsible for maintaining its state, reporting errors, and scheduling recurring jobs.</p>"
     },
     {
       "location": "plugins/development/background-jobs/#netbox.jobs.JobRunner.__init__",
-      "title": "<code>__init__(self, job)</code>  <code>special</code>",
+      "title": "<code>__init__(job)</code>",
       "text": "<p>Parameters:</p> Name Type Description Default <code>job</code> <p>The specific <code>Job</code> this <code>JobRunner</code> is executing.</p> required"
     },
     {
       "location": "plugins/development/background-jobs/#netbox.jobs.JobRunner.run",
-      "title": "<code>run(self, *args, **kwargs)</code>",
+      "title": "<code>run(*args, **kwargs)</code>  <code>abstractmethod</code>",
       "text": "<p>Run the job.</p> <p>A <code>JobRunner</code> class needs to implement this method to execute all commands of the job.</p>"
     },
     {
@@ -7401,7 +7401,7 @@
     },
     {
       "location": "plugins/development/background-jobs/#netbox.jobs.JobRunner.enqueue_once",
-      "title": "<code>enqueue_once(cls, instance=None, schedule_at=None, interval=None, *args, **kwargs)</code>  <code>classmethod</code>",
+      "title": "<code>enqueue_once(instance=None, schedule_at=None, interval=None, *args, **kwargs)</code>  <code>classmethod</code>",
       "text": "<p>Enqueue a new <code>Job</code> once, i.e. skip duplicate jobs.</p> <p>Like <code>enqueue()</code>, this method adds a new <code>Job</code> to the job queue. However, if there's already a job of this class scheduled for <code>instance</code>, the existing job will be updated if necessary. This ensures that a particular schedule is only set up once at any given time, i.e. multiple calls to this method are idempotent.</p> <p>Note that this does not forbid running additional jobs with the <code>enqueue()</code> method, e.g. to schedule an immediate synchronization job in addition to a periodic synchronization schedule.</p> <p>For additional parameters see <code>enqueue()</code>.</p> <p>Parameters:</p> Name Type Description Default <code>instance</code> <p>The NetBox object to which this job pertains (optional)</p> <code>None</code> <code>schedule_at</code> <p>Schedule the job to be executed at the passed date and time</p> <code>None</code> <code>interval</code> <p>Recurrence interval (in minutes)</p> <code>None</code>"
     },
     {
@@ -7456,17 +7456,17 @@
     },
     {
       "location": "plugins/development/dashboard-widgets/#extras.dashboard.widgets.DashboardWidget",
-      "title": "<code> DashboardWidget        </code>",
+      "title": "<code>DashboardWidget</code>",
       "text": "<p>Base class for custom dashboard widgets.</p> <p>Attributes:</p> Name Type Description <code>description</code> <p>A brief, user-friendly description of the widget's function</p> <code>default_title</code> <p>The string to show for the widget's title when none has been specified.</p> <code>default_config</code> <p>Default configuration parameters, as a dictionary mapping</p> <code>width</code> <p>The widget's default width (1 to 12)</p> <code>height</code> <p>The widget's default height; the number of rows it consumes</p>"
     },
     {
       "location": "plugins/development/dashboard-widgets/#extras.dashboard.widgets.DashboardWidget.ConfigForm",
-      "title": "<code> ConfigForm            (WidgetConfigForm)         </code>",
-      "text": "<p>The widget's configuration form.</p>"
+      "title": "<code>ConfigForm</code>",
+      "text": "<p>               Bases: <code>WidgetConfigForm</code></p> <p>The widget's configuration form.</p>"
     },
     {
       "location": "plugins/development/dashboard-widgets/#extras.dashboard.widgets.DashboardWidget.render",
-      "title": "<code>render(self, request)</code>",
+      "title": "<code>render(request)</code>",
       "text": "<p>This method is called to render the widget's content.</p> <p>Parameters:</p> Name Type Description Default <code>request</code> <p>The current request</p> required"
     },
     {
@@ -7491,17 +7491,17 @@
     },
     {
       "location": "plugins/development/data-backends/#netbox.data_backends.DataBackend",
-      "title": "<code> DataBackend        </code>",
+      "title": "<code>DataBackend</code>",
       "text": "<p>A data backend represents a specific system of record for data, such as a git repository or Amazon S3 bucket.</p> <p>Attributes:</p> Name Type Description <code>name</code> <p>The identifier under which this backend will be registered in NetBox</p> <code>label</code> <p>The human-friendly name for this backend</p> <code>is_local</code> <p>A boolean indicating whether this backend accesses local data</p> <code>parameters</code> <p>A dictionary mapping configuration form field names to their classes</p> <code>sensitive_parameters</code> <p>An iterable of field names for which the values should not be displayed to the user</p>"
     },
     {
       "location": "plugins/development/data-backends/#netbox.data_backends.DataBackend.init_config",
-      "title": "<code>init_config(self)</code>",
+      "title": "<code>init_config()</code>",
       "text": "<p>A hook to initialize the instance's configuration. The data returned by this method is assigned to the instance's <code>config</code> attribute upon initialization, which can be referenced by the <code>fetch()</code> method.</p>"
     },
     {
       "location": "plugins/development/data-backends/#netbox.data_backends.DataBackend.fetch",
-      "title": "<code>fetch(self)</code>",
+      "title": "<code>fetch()</code>",
       "text": "<p>A context manager which performs the following:</p> <ol> <li>Handles all setup and synchronization</li> <li>Yields the local path at which data has been replicated</li> <li>Performs any necessary cleanup</li> </ol>"
     },
     {
@@ -7511,8 +7511,8 @@
     },
     {
       "location": "plugins/development/event-types/#netbox.events.EventType",
-      "title": "<code> EventType        </code>  <code>dataclass</code>",
-      "text": "<p>A type of event which can occur in NetBox. Event rules can be defined to automatically perform some action in response to an event.</p> <p>Parameters:</p> Name Type Description Default <code>name</code> <code>str</code> <p>The unique name under which the event is registered.</p> required <code>text</code> <code>str</code> <p>The human-friendly event name. This should support translation.</p> required <code>kind</code> <code>str</code> <p>The event's classification (info, success, warning, or danger). The default type is info.</p> <code>'info'</code> <code>destructive</code> <code>bool</code> <p>Indicates that the associated object was destroyed as a result of the event (default: False).</p> <code>False</code>"
+      "title": "<code>EventType</code>  <code>dataclass</code>",
+      "text": "<p>A type of event which can occur in NetBox. Event rules can be defined to automatically perform some action in response to an event.</p> <p>Parameters:</p> Name Type Description Default <code>name</code> <code>str</code> <p>The unique name under which the event is registered.</p> required <code>text</code> <code>str</code> <p>The human-friendly event name. This should support translation.</p> required <code>kind</code> <code>str</code> <p>The event's classification (info, success, warning, or danger). The default type is info.</p> <code>EVENT_TYPE_KIND_INFO</code> <code>destructive</code> <code>bool</code> <p>Indicates that the associated object was destroyed as a result of the event (default: False).</p> <code>False</code>"
     },
     {
       "location": "plugins/development/exceptions/",
@@ -7581,29 +7581,29 @@
       "text": "<p>In addition to the form fields provided by Django, NetBox provides several field classes for use within forms to handle specific types of data. These can be imported from <code>utilities.forms.fields</code> and are documented below.</p>"
     },
     {
-      "location": "plugins/development/forms/#utilities.forms.fields.fields.ColorField",
-      "title": "<code> ColorField            (CharField)         </code>",
-      "text": "<p>A field which represents a color value in hexadecimal <code>RRGGBB</code> format. Utilizes NetBox's <code>ColorSelect</code> widget to render choices.</p>"
+      "location": "plugins/development/forms/#utilities.forms.fields.ColorField",
+      "title": "<code>ColorField</code>",
+      "text": "<p>               Bases: <code>CharField</code></p> <p>A field which represents a color value in hexadecimal <code>RRGGBB</code> format. Utilizes NetBox's <code>ColorSelect</code> widget to render choices.</p>"
     },
     {
-      "location": "plugins/development/forms/#utilities.forms.fields.fields.CommentField",
-      "title": "<code> CommentField            (CharField)         </code>",
-      "text": "<p>A textarea with support for Markdown rendering. Exists mostly just to add a standard <code>help_text</code>.</p>"
+      "location": "plugins/development/forms/#utilities.forms.fields.CommentField",
+      "title": "<code>CommentField</code>",
+      "text": "<p>               Bases: <code>CharField</code></p> <p>A textarea with support for Markdown rendering. Exists mostly just to add a standard <code>help_text</code>.</p>"
     },
     {
-      "location": "plugins/development/forms/#utilities.forms.fields.fields.JSONField",
-      "title": "<code> JSONField            (JSONField)         </code>",
-      "text": "<p>Custom wrapper around Django's built-in JSONField to avoid presenting \"null\" as the default text.</p>"
+      "location": "plugins/development/forms/#utilities.forms.fields.JSONField",
+      "title": "<code>JSONField</code>",
+      "text": "<p>               Bases: <code>JSONField</code></p> <p>Custom wrapper around Django's built-in JSONField to avoid presenting \"null\" as the default text.</p>"
     },
     {
-      "location": "plugins/development/forms/#utilities.forms.fields.fields.MACAddressField",
-      "title": "<code> MACAddressField            (Field)         </code>",
-      "text": "<p>Validates a 48-bit MAC address.</p>"
+      "location": "plugins/development/forms/#utilities.forms.fields.MACAddressField",
+      "title": "<code>MACAddressField</code>",
+      "text": "<p>               Bases: <code>Field</code></p> <p>Validates a 48-bit MAC address.</p>"
     },
     {
-      "location": "plugins/development/forms/#utilities.forms.fields.fields.SlugField",
-      "title": "<code> SlugField            (SlugField)         </code>",
-      "text": "<p>Extend Django's built-in SlugField to automatically populate from a field called <code>name</code> unless otherwise specified.</p> <p>Parameters:</p> Name Type Description Default <code>slug_source</code> <p>Name of the form field from which the slug value will be derived</p> <code>'name'</code>"
+      "location": "plugins/development/forms/#utilities.forms.fields.SlugField",
+      "title": "<code>SlugField</code>",
+      "text": "<p>               Bases: <code>SlugField</code></p> <p>Extend Django's built-in SlugField to automatically populate from a field called <code>name</code> unless otherwise specified.</p> <p>Parameters:</p> Name Type Description Default <code>slug_source</code> <p>Name of the form field from which the slug value will be derived</p> <code>'name'</code>"
     },
     {
       "location": "plugins/development/forms/#dynamic-object-fields",
@@ -7611,14 +7611,14 @@
       "text": ""
     },
     {
-      "location": "plugins/development/forms/#utilities.forms.fields.dynamic.DynamicModelChoiceField",
-      "title": "<code> DynamicModelChoiceField            (DynamicModelChoiceMixin, ModelChoiceField)         </code>",
-      "text": "<p>Dynamic selection field for a single object, backed by NetBox's REST API.</p>"
+      "location": "plugins/development/forms/#utilities.forms.fields.DynamicModelChoiceField",
+      "title": "<code>DynamicModelChoiceField</code>",
+      "text": "<p>               Bases: <code>DynamicModelChoiceMixin</code>, <code>ModelChoiceField</code></p> <p>Dynamic selection field for a single object, backed by NetBox's REST API.</p>"
     },
     {
-      "location": "plugins/development/forms/#utilities.forms.fields.dynamic.DynamicModelMultipleChoiceField",
-      "title": "<code> DynamicModelMultipleChoiceField            (DynamicModelChoiceMixin, ModelMultipleChoiceField)         </code>",
-      "text": "<p>A multiple-choice version of <code>DynamicModelChoiceField</code>.</p>"
+      "location": "plugins/development/forms/#utilities.forms.fields.DynamicModelMultipleChoiceField",
+      "title": "<code>DynamicModelMultipleChoiceField</code>",
+      "text": "<p>               Bases: <code>DynamicModelChoiceMixin</code>, <code>ModelMultipleChoiceField</code></p> <p>A multiple-choice version of <code>DynamicModelChoiceField</code>.</p>"
     },
     {
       "location": "plugins/development/forms/#content-type-fields",
@@ -7626,14 +7626,14 @@
       "text": ""
     },
     {
-      "location": "plugins/development/forms/#utilities.forms.fields.content_types.ContentTypeChoiceField",
-      "title": "<code> ContentTypeChoiceField            (ContentTypeChoiceMixin, ModelChoiceField)         </code>",
-      "text": "<p>Selection field for a single content type.</p>"
+      "location": "plugins/development/forms/#utilities.forms.fields.ContentTypeChoiceField",
+      "title": "<code>ContentTypeChoiceField</code>",
+      "text": "<p>               Bases: <code>ContentTypeChoiceMixin</code>, <code>ModelChoiceField</code></p> <p>Selection field for a single content type.</p>"
     },
     {
-      "location": "plugins/development/forms/#utilities.forms.fields.content_types.ContentTypeMultipleChoiceField",
-      "title": "<code> ContentTypeMultipleChoiceField            (ContentTypeChoiceMixin, ModelMultipleChoiceField)         </code>",
-      "text": "<p>Selection field for one or more content types.</p>"
+      "location": "plugins/development/forms/#utilities.forms.fields.ContentTypeMultipleChoiceField",
+      "title": "<code>ContentTypeMultipleChoiceField</code>",
+      "text": "<p>               Bases: <code>ContentTypeChoiceMixin</code>, <code>ModelMultipleChoiceField</code></p> <p>Selection field for one or more content types.</p>"
     },
     {
       "location": "plugins/development/forms/#csv-import-fields",
@@ -7641,29 +7641,29 @@
       "text": ""
     },
     {
-      "location": "plugins/development/forms/#utilities.forms.fields.csv.CSVChoiceField",
-      "title": "<code> CSVChoiceField            (CSVChoicesMixin, ChoiceField)         </code>",
-      "text": "<p>A CSV field which accepts a single selection value.</p>"
+      "location": "plugins/development/forms/#utilities.forms.fields.CSVChoiceField",
+      "title": "<code>CSVChoiceField</code>",
+      "text": "<p>               Bases: <code>CSVChoicesMixin</code>, <code>ChoiceField</code></p> <p>A CSV field which accepts a single selection value.</p>"
     },
     {
-      "location": "plugins/development/forms/#utilities.forms.fields.csv.CSVMultipleChoiceField",
-      "title": "<code> CSVMultipleChoiceField            (CSVChoicesMixin, MultipleChoiceField)         </code>",
-      "text": "<p>A CSV field which accepts multiple selection values.</p>"
+      "location": "plugins/development/forms/#utilities.forms.fields.CSVMultipleChoiceField",
+      "title": "<code>CSVMultipleChoiceField</code>",
+      "text": "<p>               Bases: <code>CSVChoicesMixin</code>, <code>MultipleChoiceField</code></p> <p>A CSV field which accepts multiple selection values.</p>"
     },
     {
-      "location": "plugins/development/forms/#utilities.forms.fields.csv.CSVModelChoiceField",
-      "title": "<code> CSVModelChoiceField            (ModelChoiceField)         </code>",
-      "text": "<p>Extends Django's <code>ModelChoiceField</code> to provide additional validation for CSV values.</p>"
+      "location": "plugins/development/forms/#utilities.forms.fields.CSVModelChoiceField",
+      "title": "<code>CSVModelChoiceField</code>",
+      "text": "<p>               Bases: <code>ModelChoiceField</code></p> <p>Extends Django's <code>ModelChoiceField</code> to provide additional validation for CSV values.</p>"
     },
     {
-      "location": "plugins/development/forms/#utilities.forms.fields.csv.CSVContentTypeField",
-      "title": "<code> CSVContentTypeField            (CSVModelChoiceField)         </code>",
-      "text": "<p>CSV field for referencing a single content type, in the form <code>&lt;app&gt;.&lt;model&gt;</code>.</p>"
+      "location": "plugins/development/forms/#utilities.forms.fields.CSVContentTypeField",
+      "title": "<code>CSVContentTypeField</code>",
+      "text": "<p>               Bases: <code>CSVModelChoiceField</code></p> <p>CSV field for referencing a single content type, in the form <code>&lt;app&gt;.&lt;model&gt;</code>.</p>"
     },
     {
-      "location": "plugins/development/forms/#utilities.forms.fields.csv.CSVMultipleContentTypeField",
-      "title": "<code> CSVMultipleContentTypeField            (ModelMultipleChoiceField)         </code>",
-      "text": "<p>CSV field for referencing one or more content types, in the form <code>&lt;app&gt;.&lt;model&gt;</code>.</p>"
+      "location": "plugins/development/forms/#utilities.forms.fields.CSVMultipleContentTypeField",
+      "title": "<code>CSVMultipleContentTypeField</code>",
+      "text": "<p>               Bases: <code>ModelMultipleChoiceField</code></p> <p>CSV field for referencing one or more content types, in the form <code>&lt;app&gt;.&lt;model&gt;</code>.</p>"
     },
     {
       "location": "plugins/development/forms/#form-rendering",
@@ -7672,22 +7672,22 @@
     },
     {
       "location": "plugins/development/forms/#utilities.forms.rendering.FieldSet",
-      "title": "<code> FieldSet        </code>",
+      "title": "<code>FieldSet</code>",
       "text": "<p>A generic grouping of fields, with an optional name. Each item will be rendered on its own row under the provided heading (name), if any. The following types may be passed as items:</p> <ul> <li>Field name (string)</li> <li>InlineFields instance</li> <li>TabbedGroups instance</li> <li>ObjectAttribute instance</li> </ul> <p>Parameters:</p> Name Type Description Default <code>items</code> <p>An iterable of items to be rendered (one per row)</p> <code>()</code> <code>name</code> <p>The fieldset's name, displayed as a heading (optional)</p> <code>None</code>"
     },
     {
       "location": "plugins/development/forms/#utilities.forms.rendering.InlineFields",
-      "title": "<code> InlineFields        </code>",
+      "title": "<code>InlineFields</code>",
       "text": "<p>A set of fields rendered inline (side-by-side) with a shared label.</p> <p>Parameters:</p> Name Type Description Default <code>fields</code> <p>An iterable of form field names</p> <code>()</code> <code>label</code> <p>The label text to render for the row (optional)</p> <code>None</code>"
     },
     {
       "location": "plugins/development/forms/#utilities.forms.rendering.TabbedGroups",
-      "title": "<code> TabbedGroups        </code>",
+      "title": "<code>TabbedGroups</code>",
       "text": "<p>Two or more groups of fields (FieldSets) arranged under tabs among which the user can toggle.</p> <p>Parameters:</p> Name Type Description Default <code>fieldsets</code> <p>An iterable of FieldSet instances, one per tab. Each FieldSet must have a name assigned, which will be employed as the tab's label.</p> <code>()</code>"
     },
     {
       "location": "plugins/development/forms/#utilities.forms.rendering.ObjectAttribute",
-      "title": "<code> ObjectAttribute        </code>",
+      "title": "<code>ObjectAttribute</code>",
       "text": "<p>Renders the value for a specific attribute on the form's instance. This may be used to display a read-only value and convey additional context to the user. If the attribute has a <code>get_absolute_url()</code> method, it will be rendered as a hyperlink.</p> <p>Parameters:</p> Name Type Description Default <code>name</code> <p>The name of the attribute to be displayed</p> required"
     },
     {
@@ -7712,13 +7712,13 @@
     },
     {
       "location": "plugins/development/graphql-api/#netbox.graphql.types.BaseObjectType",
-      "title": "<code> BaseObjectType        </code>",
+      "title": "<code>BaseObjectType</code>",
       "text": "<p>Base GraphQL object type for all NetBox objects. Restricts the model queryset to enforce object permissions.</p>"
     },
     {
       "location": "plugins/development/graphql-api/#netbox.graphql.types.NetBoxObjectType",
-      "title": "<code> NetBoxObjectType            (ChangelogMixin, CustomFieldsMixin, JournalEntriesMixin, TagsMixin, BaseObjectType)         </code>",
-      "text": "<p>GraphQL type for most NetBox models. Includes support for custom fields, change logging, journaling, and tags.</p>"
+      "title": "<code>NetBoxObjectType</code>",
+      "text": "<p>               Bases: <code>ChangelogMixin</code>, <code>CustomFieldsMixin</code>, <code>JournalEntriesMixin</code>, <code>TagsMixin</code>, <code>BaseObjectType</code></p> <p>GraphQL type for most NetBox models. Includes support for custom fields, change logging, journaling, and tags.</p>"
     },
     {
       "location": "plugins/development/migration-v4/",
@@ -7902,153 +7902,108 @@
     },
     {
       "location": "plugins/development/models/#netbox.models.features.BookmarksMixin",
-      "title": "<code> BookmarksMixin            (Model)         </code>  <code>django-model</code>",
-      "text": "<p>Enables support for user bookmarks.</p>"
-    },
-    {
-      "location": "plugins/development/models/#netbox.models.features.BookmarksMixin.bookmarks",
-      "title": "<code>bookmarks: GenericRelation</code>  <code>blank</code> <code>django-field</code> <code>nullable</code>",
-      "text": "<p>bookmarks</p>"
+      "title": "<code>BookmarksMixin</code>",
+      "text": "<p>               Bases: <code>Model</code></p> <p>Enables support for user bookmarks.</p>"
     },
     {
       "location": "plugins/development/models/#netbox.models.features.ChangeLoggingMixin",
-      "title": "<code> ChangeLoggingMixin            (Model)         </code>  <code>django-model</code>",
-      "text": "<p>Provides change logging support for a model. Adds the <code>created</code> and <code>last_updated</code> fields.</p>"
-    },
-    {
-      "location": "plugins/development/models/#netbox.models.features.ChangeLoggingMixin.created",
-      "title": "<code>created: DateTimeField</code>  <code>blank</code> <code>django-field</code> <code>nullable</code>",
-      "text": "<p>created</p>"
-    },
-    {
-      "location": "plugins/development/models/#netbox.models.features.ChangeLoggingMixin.last_updated",
-      "title": "<code>last_updated: DateTimeField</code>  <code>blank</code> <code>django-field</code> <code>nullable</code>",
-      "text": "<p>last updated</p>"
+      "title": "<code>ChangeLoggingMixin</code>",
+      "text": "<p>               Bases: <code>Model</code></p> <p>Provides change logging support for a model. Adds the <code>created</code> and <code>last_updated</code> fields.</p>"
     },
     {
       "location": "plugins/development/models/#netbox.models.features.ChangeLoggingMixin.serialize_object",
-      "title": "<code>serialize_object(self, exclude=None)</code>",
+      "title": "<code>serialize_object(exclude=None)</code>",
       "text": "<p>Return a JSON representation of the instance. Models can override this method to replace or extend the default serialization logic provided by the <code>serialize_object()</code> utility function.</p> <p>Parameters:</p> Name Type Description Default <code>exclude</code> <p>An iterable of attribute names to omit from the serialized output</p> <code>None</code>"
     },
     {
       "location": "plugins/development/models/#netbox.models.features.ChangeLoggingMixin.snapshot",
-      "title": "<code>snapshot(self)</code>",
+      "title": "<code>snapshot()</code>",
       "text": "<p>Save a snapshot of the object's current state in preparation for modification. The snapshot is saved as <code>_prechange_snapshot</code> on the instance.</p>"
     },
     {
       "location": "plugins/development/models/#netbox.models.features.ChangeLoggingMixin.to_objectchange",
-      "title": "<code>to_objectchange(self, action)</code>",
+      "title": "<code>to_objectchange(action)</code>",
       "text": "<p>Return a new ObjectChange representing a change made to this object. This will typically be called automatically by ChangeLoggingMiddleware.</p>"
     },
     {
       "location": "plugins/development/models/#netbox.models.features.CloningMixin",
-      "title": "<code> CloningMixin            (Model)         </code>  <code>django-model</code>",
-      "text": "<p>Provides the clone() method used to prepare a copy of existing objects.</p>"
+      "title": "<code>CloningMixin</code>",
+      "text": "<p>               Bases: <code>Model</code></p> <p>Provides the clone() method used to prepare a copy of existing objects.</p>"
     },
     {
       "location": "plugins/development/models/#netbox.models.features.CloningMixin.clone",
-      "title": "<code>clone(self)</code>",
+      "title": "<code>clone()</code>",
       "text": "<p>Returns a dictionary of attributes suitable for creating a copy of the current instance. This is used for pre- populating an object creation form in the UI. By default, this method will replicate any fields listed in the model's <code>clone_fields</code> list (if defined), but it can be overridden to apply custom logic.</p> <pre><code>class MyModel(NetBoxModel):\n    def clone(self):\n        attrs = super().clone()\n        attrs['extra-value'] = 123\n        return attrs\n</code></pre>"
     },
     {
       "location": "plugins/development/models/#netbox.models.features.CustomLinksMixin",
-      "title": "<code> CustomLinksMixin            (Model)         </code>  <code>django-model</code>",
-      "text": "<p>Enables support for custom links.</p>"
+      "title": "<code>CustomLinksMixin</code>",
+      "text": "<p>               Bases: <code>Model</code></p> <p>Enables support for custom links.</p>"
     },
     {
       "location": "plugins/development/models/#netbox.models.features.CustomFieldsMixin",
-      "title": "<code> CustomFieldsMixin            (Model)         </code>  <code>django-model</code>",
-      "text": "<p>Enables support for custom fields.</p>"
-    },
-    {
-      "location": "plugins/development/models/#netbox.models.features.CustomFieldsMixin.custom_field_data",
-      "title": "<code>custom_field_data: JSONField</code>  <code>blank</code> <code>django-field</code>",
-      "text": "<p>custom field data</p>"
+      "title": "<code>CustomFieldsMixin</code>",
+      "text": "<p>               Bases: <code>Model</code></p> <p>Enables support for custom fields.</p>"
     },
     {
       "location": "plugins/development/models/#netbox.models.features.CustomFieldsMixin.cf",
-      "title": "<code>cf</code>  <code>cached</code> <code>property</code> <code>writable</code>",
+      "title": "<code>cf</code>  <code>cached</code> <code>property</code>",
       "text": "<p>Return a dictionary mapping each custom field for this instance to its deserialized value.</p> <pre><code>&gt;&gt;&gt; tenant = Tenant.objects.first()\n&gt;&gt;&gt; tenant.cf\n{'primary_site': &lt;Site: DM-NYC&gt;, 'cust_id': 'DMI01', 'is_active': True}\n</code></pre>"
     },
     {
       "location": "plugins/development/models/#netbox.models.features.CustomFieldsMixin.custom_fields",
-      "title": "<code>custom_fields</code>  <code>cached</code> <code>property</code> <code>writable</code>",
+      "title": "<code>custom_fields</code>  <code>cached</code> <code>property</code>",
       "text": "<p>Return the QuerySet of CustomFields assigned to this model.</p> <pre><code>&gt;&gt;&gt; tenant = Tenant.objects.first()\n&gt;&gt;&gt; tenant.custom_fields\n&lt;RestrictedQuerySet [&lt;CustomField: Primary site&gt;, &lt;CustomField: Customer ID&gt;, &lt;CustomField: Is active&gt;]&gt;\n</code></pre>"
     },
     {
       "location": "plugins/development/models/#netbox.models.features.CustomFieldsMixin.get_custom_fields",
-      "title": "<code>get_custom_fields(self, omit_hidden=False)</code>",
+      "title": "<code>get_custom_fields(omit_hidden=False)</code>",
       "text": "<p>Return a dictionary of custom fields for a single object in the form <code>{field: value}</code>.</p> <pre><code>&gt;&gt;&gt; tenant = Tenant.objects.first()\n&gt;&gt;&gt; tenant.get_custom_fields()\n{&lt;CustomField: Customer ID&gt;: 'CYB01'}\n</code></pre> <p>Parameters:</p> Name Type Description Default <code>omit_hidden</code> <p>If True, custom fields with no UI visibility will be omitted.</p> <code>False</code>"
     },
     {
       "location": "plugins/development/models/#netbox.models.features.CustomFieldsMixin.get_custom_fields_by_group",
-      "title": "<code>get_custom_fields_by_group(self)</code>",
+      "title": "<code>get_custom_fields_by_group()</code>",
       "text": "<p>Return a dictionary of custom field/value mappings organized by group. Hidden fields are omitted.</p> <pre><code>&gt;&gt;&gt; tenant = Tenant.objects.first()\n&gt;&gt;&gt; tenant.get_custom_fields_by_group()\n{\n    '': {&lt;CustomField: Primary site&gt;: &lt;Site: DM-NYC&gt;},\n    'Billing': {&lt;CustomField: Customer ID&gt;: 'DMI01', &lt;CustomField: Is active&gt;: True}\n}\n</code></pre>"
     },
     {
       "location": "plugins/development/models/#netbox.models.features.CustomFieldsMixin.populate_custom_field_defaults",
-      "title": "<code>populate_custom_field_defaults(self)</code>",
+      "title": "<code>populate_custom_field_defaults()</code>",
       "text": "<p>Apply the default value for each custom field</p>"
     },
     {
-      "location": "plugins/development/models/#netbox.models.features.CustomFieldsMixin.clean",
-      "title": "<code>clean(self)</code>",
-      "text": "<p>Hook for doing any extra model-wide validation after clean() has been called on every field by self.clean_fields. Any ValidationError raised by this method will not be associated with a particular field; it will have a special-case association with the field defined by NON_FIELD_ERRORS.</p>"
-    },
-    {
       "location": "plugins/development/models/#netbox.models.features.CustomValidationMixin",
-      "title": "<code> CustomValidationMixin            (Model)         </code>  <code>django-model</code>",
-      "text": "<p>Enables user-configured validation rules for models.</p>"
-    },
-    {
-      "location": "plugins/development/models/#netbox.models.features.CustomValidationMixin.clean",
-      "title": "<code>clean(self)</code>",
-      "text": "<p>Hook for doing any extra model-wide validation after clean() has been called on every field by self.clean_fields. Any ValidationError raised by this method will not be associated with a particular field; it will have a special-case association with the field defined by NON_FIELD_ERRORS.</p>"
+      "title": "<code>CustomValidationMixin</code>",
+      "text": "<p>               Bases: <code>Model</code></p> <p>Enables user-configured validation rules for models.</p>"
     },
     {
       "location": "plugins/development/models/#netbox.models.features.EventRulesMixin",
-      "title": "<code> EventRulesMixin            (Model)         </code>  <code>django-model</code>",
-      "text": "<p>Enables support for event rules, which can be used to transmit webhooks or execute scripts automatically.</p>"
+      "title": "<code>EventRulesMixin</code>",
+      "text": "<p>               Bases: <code>Model</code></p> <p>Enables support for event rules, which can be used to transmit webhooks or execute scripts automatically.</p>"
     },
     {
       "location": "plugins/development/models/#netbox.models.features.ExportTemplatesMixin",
-      "title": "<code> ExportTemplatesMixin            (Model)         </code>  <code>django-model</code>",
-      "text": "<p>Enables support for export templates.</p>"
+      "title": "<code>ExportTemplatesMixin</code>",
+      "text": "<p>               Bases: <code>Model</code></p> <p>Enables support for export templates.</p>"
     },
     {
       "location": "plugins/development/models/#netbox.models.features.JobsMixin",
-      "title": "<code> JobsMixin            (Model)         </code>  <code>django-model</code>",
-      "text": "<p>Enables support for job results.</p>"
-    },
-    {
-      "location": "plugins/development/models/#netbox.models.features.JobsMixin.jobs",
-      "title": "<code>jobs: GenericRelation</code>  <code>blank</code> <code>django-field</code> <code>nullable</code>",
-      "text": "<p>jobs</p>"
+      "title": "<code>JobsMixin</code>",
+      "text": "<p>               Bases: <code>Model</code></p> <p>Enables support for job results.</p>"
     },
     {
       "location": "plugins/development/models/#netbox.models.features.JobsMixin.get_latest_jobs",
-      "title": "<code>get_latest_jobs(self)</code>",
+      "title": "<code>get_latest_jobs()</code>",
       "text": "<p>Return a list of the most recent jobs for this instance.</p>"
     },
     {
       "location": "plugins/development/models/#netbox.models.features.JournalingMixin",
-      "title": "<code> JournalingMixin            (Model)         </code>  <code>django-model</code>",
-      "text": "<p>Enables support for object journaling. Adds a generic relation (<code>journal_entries</code>) to NetBox's JournalEntry model.</p>"
-    },
-    {
-      "location": "plugins/development/models/#netbox.models.features.JournalingMixin.journal_entries",
-      "title": "<code>journal_entries: GenericRelation</code>  <code>blank</code> <code>django-field</code> <code>nullable</code>",
-      "text": "<p>journal entries</p>"
+      "title": "<code>JournalingMixin</code>",
+      "text": "<p>               Bases: <code>Model</code></p> <p>Enables support for object journaling. Adds a generic relation (<code>journal_entries</code>) to NetBox's JournalEntry model.</p>"
     },
     {
       "location": "plugins/development/models/#netbox.models.features.TagsMixin",
-      "title": "<code> TagsMixin            (Model)         </code>  <code>django-model</code>",
-      "text": "<p>Enables support for tag assignment. Assigned tags can be managed via the <code>tags</code> attribute, which is a <code>TaggableManager</code> instance.</p>"
-    },
-    {
-      "location": "plugins/development/models/#netbox.models.features.TagsMixin.tags",
-      "title": "<code>tags: TaggableManager</code>  <code>django-field</code> <code>nullable</code>",
-      "text": "<p>Tags: A comma-separated list of tags.</p>"
+      "title": "<code>TagsMixin</code>",
+      "text": "<p>               Bases: <code>Model</code></p> <p>Enables support for tag assignment. Assigned tags can be managed via the <code>tags</code> attribute, which is a <code>TaggableManager</code> instance.</p>"
     },
     {
       "location": "plugins/development/models/#choice-sets",
@@ -8142,7 +8097,7 @@
     },
     {
       "location": "plugins/development/search/#netbox.search.SearchIndex",
-      "title": "<code> SearchIndex        </code>",
+      "title": "<code>SearchIndex</code>",
       "text": "<p>Base class for building search indexes.</p> <p>Attributes:</p> Name Type Description <code>model</code> <p>The model class for which this index is used.</p> <code>category</code> <p>The label of the group under which this indexer is categorized (for form field display). If none, the name of the model's app will be used.</p> <code>fields</code> <p>An iterable of two-tuples defining the model fields to be indexed and the weight associated with each.</p> <code>display_attrs</code> <p>An iterable of additional object attributes to include when displaying search results.</p>"
     },
     {
@@ -8196,53 +8151,53 @@
       "text": "<p>The table column classes listed below are supported for use in plugins. These classes can be imported from <code>netbox.tables.columns</code>.</p>"
     },
     {
-      "location": "plugins/development/tables/#netbox.tables.columns.BooleanColumn",
-      "title": "<code> BooleanColumn            (Column)         </code>",
-      "text": "<p>Custom implementation of BooleanColumn to render a nicely-formatted checkmark or X icon instead of a Unicode character.</p>"
+      "location": "plugins/development/tables/#netbox.tables.BooleanColumn",
+      "title": "<code>BooleanColumn</code>",
+      "text": "<p>               Bases: <code>Column</code></p> <p>Custom implementation of BooleanColumn to render a nicely-formatted checkmark or X icon instead of a Unicode character.</p>"
     },
     {
-      "location": "plugins/development/tables/#netbox.tables.columns.ChoiceFieldColumn",
-      "title": "<code> ChoiceFieldColumn            (Column)         </code>",
-      "text": "<p>Render a model's static ChoiceField with its value from <code>get_FOO_display()</code> as a colored badge. Background color is set by the instance's get_FOO_color() method, if defined, or can be overridden by a \"color\" callable.</p>"
+      "location": "plugins/development/tables/#netbox.tables.ChoiceFieldColumn",
+      "title": "<code>ChoiceFieldColumn</code>",
+      "text": "<p>               Bases: <code>Column</code></p> <p>Render a model's static ChoiceField with its value from <code>get_FOO_display()</code> as a colored badge. Background color is set by the instance's get_FOO_color() method, if defined, or can be overridden by a \"color\" callable.</p>"
     },
     {
-      "location": "plugins/development/tables/#netbox.tables.columns.ColorColumn",
-      "title": "<code> ColorColumn            (Column)         </code>",
-      "text": "<p>Display an arbitrary color value, specified in RRGGBB format.</p>"
+      "location": "plugins/development/tables/#netbox.tables.ColorColumn",
+      "title": "<code>ColorColumn</code>",
+      "text": "<p>               Bases: <code>Column</code></p> <p>Display an arbitrary color value, specified in RRGGBB format.</p>"
     },
     {
-      "location": "plugins/development/tables/#netbox.tables.columns.ColoredLabelColumn",
-      "title": "<code> ColoredLabelColumn            (TemplateColumn)         </code>",
-      "text": "<p>Render a related object as a colored label. The related object must have a <code>color</code> attribute (specifying an RRGGBB value) and a <code>get_absolute_url()</code> method.</p>"
+      "location": "plugins/development/tables/#netbox.tables.ColoredLabelColumn",
+      "title": "<code>ColoredLabelColumn</code>",
+      "text": "<p>               Bases: <code>TemplateColumn</code></p> <p>Render a related object as a colored label. The related object must have a <code>color</code> attribute (specifying an RRGGBB value) and a <code>get_absolute_url()</code> method.</p>"
     },
     {
-      "location": "plugins/development/tables/#netbox.tables.columns.ContentTypeColumn",
-      "title": "<code> ContentTypeColumn            (Column)         </code>",
-      "text": "<p>Display a ContentType instance.</p>"
+      "location": "plugins/development/tables/#netbox.tables.ContentTypeColumn",
+      "title": "<code>ContentTypeColumn</code>",
+      "text": "<p>               Bases: <code>Column</code></p> <p>Display a ContentType instance.</p>"
     },
     {
-      "location": "plugins/development/tables/#netbox.tables.columns.ContentTypesColumn",
-      "title": "<code> ContentTypesColumn            (ManyToManyColumn)         </code>",
-      "text": "<p>Display a list of ContentType instances.</p>"
+      "location": "plugins/development/tables/#netbox.tables.ContentTypesColumn",
+      "title": "<code>ContentTypesColumn</code>",
+      "text": "<p>               Bases: <code>ManyToManyColumn</code></p> <p>Display a list of ContentType instances.</p>"
     },
     {
-      "location": "plugins/development/tables/#netbox.tables.columns.MarkdownColumn",
-      "title": "<code> MarkdownColumn            (TemplateColumn)         </code>",
-      "text": "<p>Render a Markdown string.</p>"
+      "location": "plugins/development/tables/#netbox.tables.MarkdownColumn",
+      "title": "<code>MarkdownColumn</code>",
+      "text": "<p>               Bases: <code>TemplateColumn</code></p> <p>Render a Markdown string.</p>"
     },
     {
-      "location": "plugins/development/tables/#netbox.tables.columns.TagColumn",
-      "title": "<code> TagColumn            (TemplateColumn)         </code>",
-      "text": "<p>Display a list of Tags assigned to the object.</p>"
+      "location": "plugins/development/tables/#netbox.tables.TagColumn",
+      "title": "<code>TagColumn</code>",
+      "text": "<p>               Bases: <code>TemplateColumn</code></p> <p>Display a list of Tags assigned to the object.</p>"
     },
     {
-      "location": "plugins/development/tables/#netbox.tables.columns.TemplateColumn",
-      "title": "<code> TemplateColumn            (TemplateColumn)         </code>",
-      "text": "<p>Overrides django-tables2's stock TemplateColumn class to render a placeholder symbol if the returned value is an empty string.</p>"
+      "location": "plugins/development/tables/#netbox.tables.TemplateColumn",
+      "title": "<code>TemplateColumn</code>",
+      "text": "<p>               Bases: <code>TemplateColumn</code></p> <p>Overrides django-tables2's stock TemplateColumn class to render a placeholder symbol if the returned value is an empty string.</p>"
     },
     {
-      "location": "plugins/development/tables/#netbox.tables.columns.TemplateColumn.__init__",
-      "title": "<code>__init__(self, export_raw=False, **kwargs)</code>  <code>special</code>",
+      "location": "plugins/development/tables/#netbox.tables.TemplateColumn.__init__",
+      "title": "<code>__init__(export_raw=False, **kwargs)</code>",
       "text": "<p>Parameters:</p> Name Type Description Default <code>export_raw</code> <p>If true, data export returns the raw field value rather than the rendered template. (Default:         False)</p> <code>False</code>"
     },
     {
@@ -8513,62 +8468,62 @@
     },
     {
       "location": "plugins/development/views/#netbox.views.generic.base.BaseObjectView",
-      "title": "<code> BaseObjectView            (ObjectPermissionRequiredMixin, View)         </code>",
-      "text": "<p>Base class for generic views which display or manipulate a single object.</p> <p>Attributes:</p> Name Type Description <code>queryset</code> <p>Django QuerySet from which the object(s) will be fetched</p> <code>template_name</code> <p>The name of the HTML template file to render</p>"
+      "title": "<code>BaseObjectView</code>",
+      "text": "<p>               Bases: <code>ObjectPermissionRequiredMixin</code>, <code>View</code></p> <p>Base class for generic views which display or manipulate a single object.</p> <p>Attributes:</p> Name Type Description <code>queryset</code> <p>Django QuerySet from which the object(s) will be fetched</p> <code>template_name</code> <p>The name of the HTML template file to render</p>"
     },
     {
       "location": "plugins/development/views/#netbox.views.generic.base.BaseObjectView.get_queryset",
-      "title": "<code>get_queryset(self, request)</code>",
+      "title": "<code>get_queryset(request)</code>",
       "text": "<p>Return the base queryset for the view. By default, this returns <code>self.queryset.all()</code>.</p> <p>Parameters:</p> Name Type Description Default <code>request</code> <p>The current request</p> required"
     },
     {
       "location": "plugins/development/views/#netbox.views.generic.base.BaseObjectView.get_object",
-      "title": "<code>get_object(self, **kwargs)</code>",
+      "title": "<code>get_object(**kwargs)</code>",
       "text": "<p>Return the object being viewed or modified. The object is identified by an arbitrary set of keyword arguments gleaned from the URL, which are passed to <code>get_object_or_404()</code>. (Typically, only a primary key is needed.)</p> <p>If no matching object is found, return a 404 response.</p>"
     },
     {
       "location": "plugins/development/views/#netbox.views.generic.base.BaseObjectView.get_extra_context",
-      "title": "<code>get_extra_context(self, request, instance)</code>",
+      "title": "<code>get_extra_context(request, instance)</code>",
       "text": "<p>Return any additional context data to include when rendering the template.</p> <p>Parameters:</p> Name Type Description Default <code>request</code> <p>The current request</p> required <code>instance</code> <p>The object being viewed</p> required"
     },
     {
-      "location": "plugins/development/views/#netbox.views.generic.object_views.ObjectView",
-      "title": "<code> ObjectView            (BaseObjectView)         </code>",
-      "text": "<p>Retrieve a single object for display.</p> <p>Note: If <code>template_name</code> is not specified, it will be determined automatically based on the queryset model.</p> <p>Attributes:</p> Name Type Description <code>tab</code> <p>A ViewTab instance for the view</p>"
+      "location": "plugins/development/views/#netbox.views.generic.ObjectView",
+      "title": "<code>ObjectView</code>",
+      "text": "<p>               Bases: <code>BaseObjectView</code></p> <p>Retrieve a single object for display.</p> <p>Note: If <code>template_name</code> is not specified, it will be determined automatically based on the queryset model.</p> <p>Attributes:</p> Name Type Description <code>tab</code> <p>A ViewTab instance for the view</p>"
     },
     {
-      "location": "plugins/development/views/#netbox.views.generic.object_views.ObjectView.get_template_name",
-      "title": "<code>get_template_name(self)</code>",
+      "location": "plugins/development/views/#netbox.views.generic.ObjectView.get_template_name",
+      "title": "<code>get_template_name()</code>",
       "text": "<p>Return self.template_name if defined. Otherwise, dynamically resolve the template name using the queryset model's <code>app_label</code> and <code>model_name</code>.</p>"
     },
     {
-      "location": "plugins/development/views/#netbox.views.generic.object_views.ObjectEditView",
-      "title": "<code> ObjectEditView            (GetReturnURLMixin, BaseObjectView)         </code>",
-      "text": "<p>Create or edit a single object.</p> <p>Attributes:</p> Name Type Description <code>form</code> <p>The form used to create or edit the object</p>"
+      "location": "plugins/development/views/#netbox.views.generic.ObjectEditView",
+      "title": "<code>ObjectEditView</code>",
+      "text": "<p>               Bases: <code>GetReturnURLMixin</code>, <code>BaseObjectView</code></p> <p>Create or edit a single object.</p> <p>Attributes:</p> Name Type Description <code>form</code> <p>The form used to create or edit the object</p>"
     },
     {
-      "location": "plugins/development/views/#netbox.views.generic.object_views.ObjectEditView.alter_object",
-      "title": "<code>alter_object(self, obj, request, url_args, url_kwargs)</code>",
+      "location": "plugins/development/views/#netbox.views.generic.ObjectEditView.alter_object",
+      "title": "<code>alter_object(obj, request, url_args, url_kwargs)</code>",
       "text": "<p>Provides a hook for views to modify an object before it is processed. For example, a parent object can be defined given some parameter from the request URL.</p> <p>Parameters:</p> Name Type Description Default <code>obj</code> <p>The object being edited</p> required <code>request</code> <p>The current request</p> required <code>url_args</code> <p>URL path args</p> required <code>url_kwargs</code> <p>URL path kwargs</p> required"
     },
     {
-      "location": "plugins/development/views/#netbox.views.generic.object_views.ObjectDeleteView",
-      "title": "<code> ObjectDeleteView            (GetReturnURLMixin, BaseObjectView)         </code>",
-      "text": "<p>Delete a single object.</p>"
+      "location": "plugins/development/views/#netbox.views.generic.ObjectDeleteView",
+      "title": "<code>ObjectDeleteView</code>",
+      "text": "<p>               Bases: <code>GetReturnURLMixin</code>, <code>BaseObjectView</code></p> <p>Delete a single object.</p>"
     },
     {
-      "location": "plugins/development/views/#netbox.views.generic.object_views.ObjectChildrenView",
-      "title": "<code> ObjectChildrenView            (ObjectView, ActionsMixin, TableMixin)         </code>",
-      "text": "<p>Display a table of child objects associated with the parent object. For example, NetBox uses this to display the set of child IP addresses within a parent prefix.</p> <p>Attributes:</p> Name Type Description <code>child_model</code> <p>The model class which represents the child objects</p> <code>table</code> <p>The django-tables2 Table class used to render the child objects list</p> <code>filterset</code> <p>A django-filter FilterSet that is applied to the queryset</p> <code>filterset_form</code> <p>The form class used to render filter options</p> <code>actions</code> <p>A mapping of supported actions to their required permissions. When adding custom actions, bulk action names must be prefixed with <code>bulk_</code>. (See ActionsMixin.)</p>"
+      "location": "plugins/development/views/#netbox.views.generic.ObjectChildrenView",
+      "title": "<code>ObjectChildrenView</code>",
+      "text": "<p>               Bases: <code>ObjectView</code>, <code>ActionsMixin</code>, <code>TableMixin</code></p> <p>Display a table of child objects associated with the parent object. For example, NetBox uses this to display the set of child IP addresses within a parent prefix.</p> <p>Attributes:</p> Name Type Description <code>child_model</code> <p>The model class which represents the child objects</p> <code>table</code> <p>The django-tables2 Table class used to render the child objects list</p> <code>filterset</code> <p>A django-filter FilterSet that is applied to the queryset</p> <code>filterset_form</code> <p>The form class used to render filter options</p> <code>actions</code> <p>A mapping of supported actions to their required permissions. When adding custom actions, bulk action names must be prefixed with <code>bulk_</code>. (See ActionsMixin.)</p>"
     },
     {
-      "location": "plugins/development/views/#netbox.views.generic.object_views.ObjectChildrenView.get_children",
-      "title": "<code>get_children(self, request, parent)</code>",
+      "location": "plugins/development/views/#netbox.views.generic.ObjectChildrenView.get_children",
+      "title": "<code>get_children(request, parent)</code>",
       "text": "<p>Return a QuerySet of child objects.</p> <p>Parameters:</p> Name Type Description Default <code>request</code> <p>The current request</p> required <code>parent</code> <p>The parent object</p> required"
     },
     {
-      "location": "plugins/development/views/#netbox.views.generic.object_views.ObjectChildrenView.prep_table_data",
-      "title": "<code>prep_table_data(self, request, queryset, parent)</code>",
+      "location": "plugins/development/views/#netbox.views.generic.ObjectChildrenView.prep_table_data",
+      "title": "<code>prep_table_data(request, queryset, parent)</code>",
       "text": "<p>Provides a hook for subclassed views to modify data before initializing the table.</p> <p>Parameters:</p> Name Type Description Default <code>request</code> <p>The current request</p> required <code>queryset</code> <p>The filtered queryset of child objects</p> required <code>parent</code> <p>The parent object</p> required"
     },
     {
@@ -8578,57 +8533,57 @@
     },
     {
       "location": "plugins/development/views/#netbox.views.generic.base.BaseMultiObjectView",
-      "title": "<code> BaseMultiObjectView            (ObjectPermissionRequiredMixin, View)         </code>",
-      "text": "<p>Base class for generic views which display or manipulate multiple objects.</p> <p>Attributes:</p> Name Type Description <code>queryset</code> <p>Django QuerySet from which the object(s) will be fetched</p> <code>table</code> <p>The django-tables2 Table class used to render the objects list</p> <code>template_name</code> <p>The name of the HTML template file to render</p>"
+      "title": "<code>BaseMultiObjectView</code>",
+      "text": "<p>               Bases: <code>ObjectPermissionRequiredMixin</code>, <code>View</code></p> <p>Base class for generic views which display or manipulate multiple objects.</p> <p>Attributes:</p> Name Type Description <code>queryset</code> <p>Django QuerySet from which the object(s) will be fetched</p> <code>table</code> <p>The django-tables2 Table class used to render the objects list</p> <code>template_name</code> <p>The name of the HTML template file to render</p>"
     },
     {
       "location": "plugins/development/views/#netbox.views.generic.base.BaseMultiObjectView.get_queryset",
-      "title": "<code>get_queryset(self, request)</code>",
+      "title": "<code>get_queryset(request)</code>",
       "text": "<p>Return the base queryset for the view. By default, this returns <code>self.queryset.all()</code>.</p> <p>Parameters:</p> Name Type Description Default <code>request</code> <p>The current request</p> required"
     },
     {
       "location": "plugins/development/views/#netbox.views.generic.base.BaseMultiObjectView.get_extra_context",
-      "title": "<code>get_extra_context(self, request)</code>",
+      "title": "<code>get_extra_context(request)</code>",
       "text": "<p>Return any additional context data to include when rendering the template.</p> <p>Parameters:</p> Name Type Description Default <code>request</code> <p>The current request</p> required"
     },
     {
-      "location": "plugins/development/views/#netbox.views.generic.bulk_views.ObjectListView",
-      "title": "<code> ObjectListView            (BaseMultiObjectView, ActionsMixin, TableMixin)         </code>",
-      "text": "<p>Display multiple objects, all the same type, as a table.</p> <p>Attributes:</p> Name Type Description <code>filterset</code> <p>A django-filter FilterSet that is applied to the queryset</p> <code>filterset_form</code> <p>The form class used to render filter options</p> <code>actions</code> <p>A mapping of supported actions to their required permissions. When adding custom actions, bulk action names must be prefixed with <code>bulk_</code>. (See ActionsMixin.)</p>"
+      "location": "plugins/development/views/#netbox.views.generic.ObjectListView",
+      "title": "<code>ObjectListView</code>",
+      "text": "<p>               Bases: <code>BaseMultiObjectView</code>, <code>ActionsMixin</code>, <code>TableMixin</code></p> <p>Display multiple objects, all the same type, as a table.</p> <p>Attributes:</p> Name Type Description <code>filterset</code> <p>A django-filter FilterSet that is applied to the queryset</p> <code>filterset_form</code> <p>The form class used to render filter options</p> <code>actions</code> <p>A mapping of supported actions to their required permissions. When adding custom actions, bulk action names must be prefixed with <code>bulk_</code>. (See ActionsMixin.)</p>"
     },
     {
-      "location": "plugins/development/views/#netbox.views.generic.bulk_views.ObjectListView.export_table",
-      "title": "<code>export_table(self, table, columns=None, filename=None)</code>",
+      "location": "plugins/development/views/#netbox.views.generic.ObjectListView.export_table",
+      "title": "<code>export_table(table, columns=None, filename=None)</code>",
       "text": "<p>Export all table data in CSV format.</p> <p>Parameters:</p> Name Type Description Default <code>table</code> <p>The Table instance to export</p> required <code>columns</code> <p>A list of specific columns to include. If None, all columns will be exported.</p> <code>None</code> <code>filename</code> <p>The name of the file attachment sent to the client. If None, will be determined automatically from the queryset model name.</p> <code>None</code>"
     },
     {
-      "location": "plugins/development/views/#netbox.views.generic.bulk_views.ObjectListView.export_template",
-      "title": "<code>export_template(self, template, request)</code>",
+      "location": "plugins/development/views/#netbox.views.generic.ObjectListView.export_template",
+      "title": "<code>export_template(template, request)</code>",
       "text": "<p>Render an ExportTemplate using the current queryset.</p> <p>Parameters:</p> Name Type Description Default <code>template</code> <p>ExportTemplate instance</p> required <code>request</code> <p>The current request</p> required"
     },
     {
-      "location": "plugins/development/views/#netbox.views.generic.bulk_views.BulkImportView",
-      "title": "<code> BulkImportView            (GetReturnURLMixin, BaseMultiObjectView)         </code>",
-      "text": "<p>Import objects in bulk (CSV format).</p> <p>Attributes:</p> Name Type Description <code>model_form</code> <p>The form used to create each imported object</p>"
+      "location": "plugins/development/views/#netbox.views.generic.BulkImportView",
+      "title": "<code>BulkImportView</code>",
+      "text": "<p>               Bases: <code>GetReturnURLMixin</code>, <code>BaseMultiObjectView</code></p> <p>Import objects in bulk (CSV format).</p> <p>Attributes:</p> Name Type Description <code>model_form</code> <p>The form used to create each imported object</p>"
     },
     {
-      "location": "plugins/development/views/#netbox.views.generic.bulk_views.BulkImportView.save_object",
-      "title": "<code>save_object(self, object_form, request)</code>",
+      "location": "plugins/development/views/#netbox.views.generic.BulkImportView.save_object",
+      "title": "<code>save_object(object_form, request)</code>",
       "text": "<p>Provide a hook to modify the object immediately before saving it (e.g. to encrypt secret data).</p> <p>Parameters:</p> Name Type Description Default <code>object_form</code> <p>The model form instance</p> required <code>request</code> <p>The current request</p> required"
     },
     {
-      "location": "plugins/development/views/#netbox.views.generic.bulk_views.BulkEditView",
-      "title": "<code> BulkEditView            (GetReturnURLMixin, BaseMultiObjectView)         </code>",
-      "text": "<p>Edit objects in bulk.</p> <p>Attributes:</p> Name Type Description <code>filterset</code> <p>FilterSet to apply when deleting by QuerySet</p> <code>form</code> <p>The form class used to edit objects in bulk</p>"
+      "location": "plugins/development/views/#netbox.views.generic.BulkEditView",
+      "title": "<code>BulkEditView</code>",
+      "text": "<p>               Bases: <code>GetReturnURLMixin</code>, <code>BaseMultiObjectView</code></p> <p>Edit objects in bulk.</p> <p>Attributes:</p> Name Type Description <code>filterset</code> <p>FilterSet to apply when deleting by QuerySet</p> <code>form</code> <p>The form class used to edit objects in bulk</p>"
     },
     {
-      "location": "plugins/development/views/#netbox.views.generic.bulk_views.BulkDeleteView",
-      "title": "<code> BulkDeleteView            (GetReturnURLMixin, BaseMultiObjectView)         </code>",
-      "text": "<p>Delete objects in bulk.</p> <p>Attributes:</p> Name Type Description <code>filterset</code> <p>FilterSet to apply when deleting by QuerySet</p> <code>table</code> <p>The table used to display devices being deleted</p>"
+      "location": "plugins/development/views/#netbox.views.generic.BulkDeleteView",
+      "title": "<code>BulkDeleteView</code>",
+      "text": "<p>               Bases: <code>GetReturnURLMixin</code>, <code>BaseMultiObjectView</code></p> <p>Delete objects in bulk.</p> <p>Attributes:</p> Name Type Description <code>filterset</code> <p>FilterSet to apply when deleting by QuerySet</p> <code>table</code> <p>The table used to display devices being deleted</p>"
     },
     {
-      "location": "plugins/development/views/#netbox.views.generic.bulk_views.BulkDeleteView.get_form",
-      "title": "<code>get_form(self)</code>",
+      "location": "plugins/development/views/#netbox.views.generic.BulkDeleteView.get_form",
+      "title": "<code>get_form()</code>",
       "text": "<p>Provide a standard bulk delete form if none has been specified for the view</p>"
     },
     {
@@ -8637,14 +8592,14 @@
       "text": "<p>These views are provided to enable or enhance certain NetBox model features, such as change logging or journaling. These typically do not need to be subclassed: They can be used directly e.g. in a URL path.</p>"
     },
     {
-      "location": "plugins/development/views/#netbox.views.generic.feature_views.ObjectChangeLogView",
-      "title": "<code> ObjectChangeLogView            (ConditionalLoginRequiredMixin, View)         </code>",
-      "text": "<p>Present a history of changes made to a particular object. The model class must be passed as a keyword argument when referencing this view in a URL path. For example:</p> <pre><code>path('sites/&lt;int:pk&gt;/changelog/', ObjectChangeLogView.as_view(), name='site_changelog', kwargs={'model': Site}),\n</code></pre> <p>Attributes:</p> Name Type Description <code>base_template</code> <p>The name of the template to extend. If not provided, \"{app}/{model}.html\" will be used.</p>"
+      "location": "plugins/development/views/#netbox.views.generic.ObjectChangeLogView",
+      "title": "<code>ObjectChangeLogView</code>",
+      "text": "<p>               Bases: <code>ConditionalLoginRequiredMixin</code>, <code>View</code></p> <p>Present a history of changes made to a particular object. The model class must be passed as a keyword argument when referencing this view in a URL path. For example:</p> <pre><code>path('sites/&lt;int:pk&gt;/changelog/', ObjectChangeLogView.as_view(), name='site_changelog', kwargs={'model': Site}),\n</code></pre> <p>Attributes:</p> Name Type Description <code>base_template</code> <p>The name of the template to extend. If not provided, \"{app}/{model}.html\" will be used.</p>"
     },
     {
-      "location": "plugins/development/views/#netbox.views.generic.feature_views.ObjectJournalView",
-      "title": "<code> ObjectJournalView            (ConditionalLoginRequiredMixin, View)         </code>",
-      "text": "<p>Show all journal entries for an object. The model class must be passed as a keyword argument when referencing this view in a URL path. For example:</p> <pre><code>path('sites/&lt;int:pk&gt;/journal/', ObjectJournalView.as_view(), name='site_journal', kwargs={'model': Site}),\n</code></pre> <p>Attributes:</p> Name Type Description <code>base_template</code> <p>The name of the template to extend. If not provided, \"{app}/{model}.html\" will be used.</p>"
+      "location": "plugins/development/views/#netbox.views.generic.ObjectJournalView",
+      "title": "<code>ObjectJournalView</code>",
+      "text": "<p>               Bases: <code>ConditionalLoginRequiredMixin</code>, <code>View</code></p> <p>Show all journal entries for an object. The model class must be passed as a keyword argument when referencing this view in a URL path. For example:</p> <pre><code>path('sites/&lt;int:pk&gt;/journal/', ObjectJournalView.as_view(), name='site_journal', kwargs={'model': Site}),\n</code></pre> <p>Attributes:</p> Name Type Description <code>base_template</code> <p>The name of the template to extend. If not provided, \"{app}/{model}.html\" will be used.</p>"
     },
     {
       "location": "plugins/development/views/#extending-core-views",
@@ -8663,12 +8618,12 @@
     },
     {
       "location": "plugins/development/views/#utilities.views.ViewTab",
-      "title": "<code> ViewTab        </code>",
+      "title": "<code>ViewTab</code>",
       "text": "<p>ViewTabs are used for navigation among multiple object-specific views, such as the changelog or journal for a particular object.</p> <p>Parameters:</p> Name Type Description Default <code>label</code> <p>Human-friendly text</p> required <code>badge</code> <p>A static value or callable to display alongside the label (optional). If a callable is used, it must accept a single argument representing the object being viewed.</p> <code>None</code> <code>weight</code> <p>Numeric weight to influence ordering among other tabs (default: 1000)</p> <code>1000</code> <code>permission</code> <p>The permission required to display the tab (optional).</p> <code>None</code> <code>hide_if_empty</code> <p>If true, the tab will be displayed only if its badge has a meaningful value. (Tabs without a badge are always displayed.)</p> <code>False</code>"
     },
     {
       "location": "plugins/development/views/#utilities.views.ViewTab.render",
-      "title": "<code>render(self, instance)</code>",
+      "title": "<code>render(instance)</code>",
       "text": "<p>Return the attributes needed to render a tab in HTML.</p>"
     },
     {

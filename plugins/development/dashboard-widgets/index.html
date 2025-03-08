@@ -1379,7 +1379,7 @@
                                                       class="md-nav__link"
                                                     >
                                                       <span class="md-ellipsis">
-                                                        render()
+                                                        render
                                                       </span>
                                                     </a>
                                                   </li>
@@ -3659,7 +3659,7 @@
                                     href="#extras.dashboard.widgets.DashboardWidget.render"
                                     class="md-nav__link"
                                   >
-                                    <span class="md-ellipsis"> render() </span>
+                                    <span class="md-ellipsis"> render </span>
                                   </a>
                                 </li>
                               </ul>
@@ -3720,13 +3720,13 @@
                   id="extras.dashboard.widgets.DashboardWidget"
                   class="doc doc-heading"
                 >
-                  <code> DashboardWidget </code>
+                  <code>DashboardWidget</code>
                 </h3>
 
                 <div class="doc doc-contents first">
                   <p>Base class for custom dashboard widgets.</p>
 
-                  <p><strong>Attributes:</strong></p>
+                  <p><span class="doc-section-title">Attributes:</span></p>
                   <table>
                     <thead>
                       <tr>
@@ -3736,49 +3736,96 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td><code>description</code></td>
+                      <tr class="doc-section-item">
+                        <td>
+                          <code
+                            ><span
+                              title="extras.dashboard.widgets.DashboardWidget.description"
+                              >description</span
+                            ></code
+                          >
+                        </td>
                         <td></td>
                         <td>
-                          <p>
-                            A brief, user-friendly description of the widget's
-                            function
-                          </p>
+                          <div class="doc-md-description">
+                            <p>
+                              A brief, user-friendly description of the widget's
+                              function
+                            </p>
+                          </div>
                         </td>
                       </tr>
-                      <tr>
-                        <td><code>default_title</code></td>
+                      <tr class="doc-section-item">
+                        <td>
+                          <code
+                            ><span
+                              title="extras.dashboard.widgets.DashboardWidget.default_title"
+                              >default_title</span
+                            ></code
+                          >
+                        </td>
                         <td></td>
                         <td>
-                          <p>
-                            The string to show for the widget's title when none
-                            has been specified.
-                          </p>
+                          <div class="doc-md-description">
+                            <p>
+                              The string to show for the widget's title when
+                              none has been specified.
+                            </p>
+                          </div>
                         </td>
                       </tr>
-                      <tr>
-                        <td><code>default_config</code></td>
+                      <tr class="doc-section-item">
+                        <td>
+                          <code
+                            ><span
+                              title="extras.dashboard.widgets.DashboardWidget.default_config"
+                              >default_config</span
+                            ></code
+                          >
+                        </td>
                         <td></td>
                         <td>
-                          <p>
-                            Default configuration parameters, as a dictionary
-                            mapping
-                          </p>
+                          <div class="doc-md-description">
+                            <p>
+                              Default configuration parameters, as a dictionary
+                              mapping
+                            </p>
+                          </div>
                         </td>
                       </tr>
-                      <tr>
-                        <td><code>width</code></td>
-                        <td></td>
-                        <td><p>The widget's default width (1 to 12)</p></td>
-                      </tr>
-                      <tr>
-                        <td><code>height</code></td>
+                      <tr class="doc-section-item">
+                        <td>
+                          <code
+                            ><span
+                              title="extras.dashboard.widgets.DashboardWidget.width"
+                              >width</span
+                            ></code
+                          >
+                        </td>
                         <td></td>
                         <td>
-                          <p>
-                            The widget's default height; the number of rows it
-                            consumes
-                          </p>
+                          <div class="doc-md-description">
+                            <p>The widget's default width (1 to 12)</p>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr class="doc-section-item">
+                        <td>
+                          <code
+                            ><span
+                              title="extras.dashboard.widgets.DashboardWidget.height"
+                              >height</span
+                            ></code
+                          >
+                        </td>
+                        <td></td>
+                        <td>
+                          <div class="doc-md-description">
+                            <p>
+                              The widget's default height; the number of rows it
+                              consumes
+                            </p>
+                          </div>
                         </td>
                       </tr>
                     </tbody>
@@ -3790,30 +3837,32 @@
                         id="extras.dashboard.widgets.DashboardWidget.ConfigForm"
                         class="doc doc-heading"
                       >
-                        <code>
-                          ConfigForm (<span
-                            title="extras.dashboard.widgets.WidgetConfigForm"
-                            >WidgetConfigForm</span
-                          >)
-                        </code>
+                        <code>ConfigForm</code>
                       </h4>
 
                       <div class="doc doc-contents">
-                        <p>The widget's configuration form.</p>
+                        <p class="doc doc-class-bases">
+                          Bases:
+                          <code
+                            ><span
+                              title="extras.dashboard.widgets.WidgetConfigForm"
+                              >WidgetConfigForm</span
+                            ></code
+                          >
+                        </p>
 
-                        <div class="doc doc-children"></div>
+                        <p>The widget's configuration form.</p>
                       </div>
                     </div>
 
-                    <div class="doc doc-object doc-method">
+                    <div class="doc doc-object doc-function">
                       <h4
                         id="extras.dashboard.widgets.DashboardWidget.render"
                         class="doc doc-heading"
                       >
                         <code class="highlight language-python"
                           ><span class="n">render</span><span class="p">(</span
-                          ><span class="bp">self</span><span class="p">,</span>
-                          <span class="n">request</span
+                          ><span class="n">request</span
                           ><span class="p">)</span></code
                         >
                       </h4>
@@ -3823,7 +3872,9 @@
                           This method is called to render the widget's content.
                         </p>
 
-                        <p><strong>Parameters:</strong></p>
+                        <p>
+                          <span class="doc-section-title">Parameters:</span>
+                        </p>
                         <table>
                           <thead>
                             <tr>
@@ -3834,11 +3885,19 @@
                             </tr>
                           </thead>
                           <tbody>
-                            <tr>
-                              <td><code>request</code></td>
+                            <tr class="doc-section-item">
+                              <td>
+                                <code>request</code>
+                              </td>
                               <td></td>
-                              <td><p>The current request</p></td>
-                              <td><em>required</em></td>
+                              <td>
+                                <div class="doc-md-description">
+                                  <p>The current request</p>
+                                </div>
+                              </td>
+                              <td>
+                                <em>required</em>
+                              </td>
                             </tr>
                           </tbody>
                         </table>
@@ -3847,7 +3906,6 @@
                   </div>
                 </div>
               </div>
-
               <h2 id="widget-registration">Widget Registration</h2>
               <p>
                 To register a dashboard widget for use in NetBox, import the

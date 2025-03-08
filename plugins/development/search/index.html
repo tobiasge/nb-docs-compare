@@ -1293,7 +1293,7 @@
                                                 class="md-nav__link"
                                               >
                                                 <span class="md-ellipsis">
-                                                  get_field_type()
+                                                  get_field_type
                                                 </span>
                                               </a>
                                             </li>
@@ -1304,7 +1304,7 @@
                                                 class="md-nav__link"
                                               >
                                                 <span class="md-ellipsis">
-                                                  get_attr_type()
+                                                  get_attr_type
                                                 </span>
                                               </a>
                                             </li>
@@ -1315,7 +1315,7 @@
                                                 class="md-nav__link"
                                               >
                                                 <span class="md-ellipsis">
-                                                  get_field_value()
+                                                  get_field_value
                                                 </span>
                                               </a>
                                             </li>
@@ -1326,7 +1326,7 @@
                                                 class="md-nav__link"
                                               >
                                                 <span class="md-ellipsis">
-                                                  to_cache()
+                                                  to_cache
                                                 </span>
                                               </a>
                                             </li>
@@ -3608,9 +3608,7 @@
                               href="#netbox.search.SearchIndex.get_field_type"
                               class="md-nav__link"
                             >
-                              <span class="md-ellipsis">
-                                get_field_type()
-                              </span>
+                              <span class="md-ellipsis"> get_field_type </span>
                             </a>
                           </li>
 
@@ -3619,7 +3617,7 @@
                               href="#netbox.search.SearchIndex.get_attr_type"
                               class="md-nav__link"
                             >
-                              <span class="md-ellipsis"> get_attr_type() </span>
+                              <span class="md-ellipsis"> get_attr_type </span>
                             </a>
                           </li>
 
@@ -3628,9 +3626,7 @@
                               href="#netbox.search.SearchIndex.get_field_value"
                               class="md-nav__link"
                             >
-                              <span class="md-ellipsis">
-                                get_field_value()
-                              </span>
+                              <span class="md-ellipsis"> get_field_value </span>
                             </a>
                           </li>
 
@@ -3639,7 +3635,7 @@
                               href="#netbox.search.SearchIndex.to_cache"
                               class="md-nav__link"
                             >
-                              <span class="md-ellipsis"> to_cache() </span>
+                              <span class="md-ellipsis"> to_cache </span>
                             </a>
                           </li>
                         </ul>
@@ -3700,13 +3696,13 @@
 
               <div class="doc doc-object doc-class">
                 <h3 id="netbox.search.SearchIndex" class="doc doc-heading">
-                  <code> SearchIndex </code>
+                  <code>SearchIndex</code>
                 </h3>
 
                 <div class="doc doc-contents first">
                   <p>Base class for building search indexes.</p>
 
-                  <p><strong>Attributes:</strong></p>
+                  <p><span class="doc-section-title">Attributes:</span></p>
                   <table>
                     <thead>
                       <tr>
@@ -3716,49 +3712,83 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td><code>model</code></td>
+                      <tr class="doc-section-item">
+                        <td>
+                          <code
+                            ><span title="netbox.search.SearchIndex.model"
+                              >model</span
+                            ></code
+                          >
+                        </td>
                         <td></td>
                         <td>
-                          <p>The model class for which this index is used.</p>
+                          <div class="doc-md-description">
+                            <p>The model class for which this index is used.</p>
+                          </div>
                         </td>
                       </tr>
-                      <tr>
-                        <td><code>category</code></td>
+                      <tr class="doc-section-item">
+                        <td>
+                          <code
+                            ><span title="netbox.search.SearchIndex.category"
+                              >category</span
+                            ></code
+                          >
+                        </td>
                         <td></td>
                         <td>
-                          <p>
-                            The label of the group under which this indexer is
-                            categorized (for form field display). If none, the
-                            name of the model's app will be used.
-                          </p>
+                          <div class="doc-md-description">
+                            <p>
+                              The label of the group under which this indexer is
+                              categorized (for form field display). If none, the
+                              name of the model's app will be used.
+                            </p>
+                          </div>
                         </td>
                       </tr>
-                      <tr>
-                        <td><code>fields</code></td>
+                      <tr class="doc-section-item">
+                        <td>
+                          <code
+                            ><span title="netbox.search.SearchIndex.fields"
+                              >fields</span
+                            ></code
+                          >
+                        </td>
                         <td></td>
                         <td>
-                          <p>
-                            An iterable of two-tuples defining the model fields
-                            to be indexed and the weight associated with each.
-                          </p>
+                          <div class="doc-md-description">
+                            <p>
+                              An iterable of two-tuples defining the model
+                              fields to be indexed and the weight associated
+                              with each.
+                            </p>
+                          </div>
                         </td>
                       </tr>
-                      <tr>
-                        <td><code>display_attrs</code></td>
+                      <tr class="doc-section-item">
+                        <td>
+                          <code
+                            ><span
+                              title="netbox.search.SearchIndex.display_attrs"
+                              >display_attrs</span
+                            ></code
+                          >
+                        </td>
                         <td></td>
                         <td>
-                          <p>
-                            An iterable of additional object attributes to
-                            include when displaying search results.
-                          </p>
+                          <div class="doc-md-description">
+                            <p>
+                              An iterable of additional object attributes to
+                              include when displaying search results.
+                            </p>
+                          </div>
                         </td>
                       </tr>
                     </tbody>
                   </table>
 
                   <div class="doc doc-children">
-                    <div class="doc doc-object doc-method">
+                    <div class="doc doc-object doc-function">
                       <h4
                         id="netbox.search.SearchIndex.get_field_type"
                         class="doc doc-heading"
@@ -3772,9 +3802,8 @@
                           ><span class="p">)</span></code
                         >
 
-                        <span class="doc doc-properties">
-                          <small
-                            class="doc doc-property doc-property-staticmethod"
+                        <span class="doc doc-labels">
+                          <small class="doc doc-label doc-label-staticmethod"
                             ><code>staticmethod</code></small
                           >
                         </span>
@@ -3787,7 +3816,7 @@
                       </div>
                     </div>
 
-                    <div class="doc doc-object doc-method">
+                    <div class="doc doc-object doc-function">
                       <h4
                         id="netbox.search.SearchIndex.get_attr_type"
                         class="doc doc-heading"
@@ -3801,9 +3830,8 @@
                           ><span class="p">)</span></code
                         >
 
-                        <span class="doc doc-properties">
-                          <small
-                            class="doc doc-property doc-property-staticmethod"
+                        <span class="doc doc-labels">
+                          <small class="doc doc-label doc-label-staticmethod"
                             ><code>staticmethod</code></small
                           >
                         </span>
@@ -3817,7 +3845,7 @@
                       </div>
                     </div>
 
-                    <div class="doc doc-object doc-method">
+                    <div class="doc doc-object doc-function">
                       <h4
                         id="netbox.search.SearchIndex.get_field_value"
                         class="doc doc-heading"
@@ -3831,9 +3859,8 @@
                           ><span class="p">)</span></code
                         >
 
-                        <span class="doc doc-properties">
-                          <small
-                            class="doc doc-property doc-property-staticmethod"
+                        <span class="doc doc-labels">
+                          <small class="doc doc-label doc-label-staticmethod"
                             ><code>staticmethod</code></small
                           >
                         </span>
@@ -3847,7 +3874,7 @@
                       </div>
                     </div>
 
-                    <div class="doc doc-object doc-method">
+                    <div class="doc doc-object doc-function">
                       <h4
                         id="netbox.search.SearchIndex.to_cache"
                         class="doc doc-heading"
@@ -3862,9 +3889,8 @@
                           ><span class="p">)</span></code
                         >
 
-                        <span class="doc doc-properties">
-                          <small
-                            class="doc doc-property doc-property-classmethod"
+                        <span class="doc doc-labels">
+                          <small class="doc doc-label doc-label-classmethod"
                             ><code>classmethod</code></small
                           >
                         </span>
@@ -3876,7 +3902,9 @@
                           instance fields to be cached.
                         </p>
 
-                        <p><strong>Parameters:</strong></p>
+                        <p>
+                          <span class="doc-section-title">Parameters:</span>
+                        </p>
                         <table>
                           <thead>
                             <tr>
@@ -3887,26 +3915,40 @@
                             </tr>
                           </thead>
                           <tbody>
-                            <tr>
-                              <td><code>instance</code></td>
-                              <td></td>
-                              <td><p>The instance being cached.</p></td>
-                              <td><em>required</em></td>
-                            </tr>
-                            <tr>
-                              <td><code>custom_fields</code></td>
+                            <tr class="doc-section-item">
+                              <td>
+                                <code>instance</code>
+                              </td>
                               <td></td>
                               <td>
-                                <p>
-                                  An iterable of CustomFields to include when
-                                  caching the instance. If None, all custom
-                                  fields defined for the model will be included.
-                                  (This can also be provided during bulk caching
-                                  to avoid looking up the available custom
-                                  fields for each instance.)
-                                </p>
+                                <div class="doc-md-description">
+                                  <p>The instance being cached.</p>
+                                </div>
                               </td>
-                              <td><code>None</code></td>
+                              <td>
+                                <em>required</em>
+                              </td>
+                            </tr>
+                            <tr class="doc-section-item">
+                              <td>
+                                <code>custom_fields</code>
+                              </td>
+                              <td></td>
+                              <td>
+                                <div class="doc-md-description">
+                                  <p>
+                                    An iterable of CustomFields to include when
+                                    caching the instance. If None, all custom
+                                    fields defined for the model will be
+                                    included. (This can also be provided during
+                                    bulk caching to avoid looking up the
+                                    available custom fields for each instance.)
+                                  </p>
+                                </div>
+                              </td>
+                              <td>
+                                <code>None</code>
+                              </td>
                             </tr>
                           </tbody>
                         </table>

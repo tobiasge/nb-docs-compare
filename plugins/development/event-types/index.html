@@ -3581,10 +3581,10 @@
 
               <div class="doc doc-object doc-class">
                 <h3 id="netbox.events.EventType" class="doc doc-heading">
-                  <code> EventType </code>
+                  <code>EventType</code>
 
-                  <span class="doc doc-properties">
-                    <small class="doc doc-property doc-property-dataclass"
+                  <span class="doc doc-labels">
+                    <small class="doc doc-label doc-label-dataclass"
                       ><code>dataclass</code></small
                     >
                   </span>
@@ -3597,7 +3597,7 @@
                     to an event.
                   </p>
 
-                  <p><strong>Parameters:</strong></p>
+                  <p><span class="doc-section-title">Parameters:</span></p>
                   <table>
                     <thead>
                       <tr>
@@ -3608,48 +3608,85 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <td><code>name</code></td>
-                        <td><code>str</code></td>
+                      <tr class="doc-section-item">
                         <td>
-                          <p>
-                            The unique name under which the event is registered.
-                          </p>
+                          <code>name</code>
                         </td>
-                        <td><em>required</em></td>
+                        <td>
+                          <code><span title="str">str</span></code>
+                        </td>
+                        <td>
+                          <div class="doc-md-description">
+                            <p>
+                              The unique name under which the event is
+                              registered.
+                            </p>
+                          </div>
+                        </td>
+                        <td>
+                          <em>required</em>
+                        </td>
                       </tr>
-                      <tr>
-                        <td><code>text</code></td>
-                        <td><code>str</code></td>
+                      <tr class="doc-section-item">
                         <td>
-                          <p>
-                            The human-friendly event name. This should support
-                            translation.
-                          </p>
+                          <code>text</code>
                         </td>
-                        <td><em>required</em></td>
+                        <td>
+                          <code><span title="str">str</span></code>
+                        </td>
+                        <td>
+                          <div class="doc-md-description">
+                            <p>
+                              The human-friendly event name. This should support
+                              translation.
+                            </p>
+                          </div>
+                        </td>
+                        <td>
+                          <em>required</em>
+                        </td>
                       </tr>
-                      <tr>
-                        <td><code>kind</code></td>
-                        <td><code>str</code></td>
+                      <tr class="doc-section-item">
                         <td>
-                          <p>
-                            The event's classification (info, success, warning,
-                            or danger). The default type is info.
-                          </p>
+                          <code>kind</code>
                         </td>
-                        <td><code>&#39;info&#39;</code></td>
+                        <td>
+                          <code><span title="str">str</span></code>
+                        </td>
+                        <td>
+                          <div class="doc-md-description">
+                            <p>
+                              The event's classification (info, success,
+                              warning, or danger). The default type is info.
+                            </p>
+                          </div>
+                        </td>
+                        <td>
+                          <code
+                            ><span title="netbox.events.EVENT_TYPE_KIND_INFO"
+                              >EVENT_TYPE_KIND_INFO</span
+                            ></code
+                          >
+                        </td>
                       </tr>
-                      <tr>
-                        <td><code>destructive</code></td>
-                        <td><code>bool</code></td>
+                      <tr class="doc-section-item">
                         <td>
-                          <p>
-                            Indicates that the associated object was destroyed
-                            as a result of the event (default: False).
-                          </p>
+                          <code>destructive</code>
                         </td>
-                        <td><code>False</code></td>
+                        <td>
+                          <code><span title="bool">bool</span></code>
+                        </td>
+                        <td>
+                          <div class="doc-md-description">
+                            <p>
+                              Indicates that the associated object was destroyed
+                              as a result of the event (default: False).
+                            </p>
+                          </div>
+                        </td>
+                        <td>
+                          <code>False</code>
+                        </td>
                       </tr>
                     </tbody>
                   </table>
